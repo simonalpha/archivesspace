@@ -6,6 +6,7 @@ gem "sinatra-reloader", :require => false
 gem "sequel"
 gem "rack-session-sequel"
 gem "jdbc-mysql"
+gem "jdbc-postgres"
 gem "jdbc-derby"
 gem "bcrypt-ruby"
 gem "rspec"

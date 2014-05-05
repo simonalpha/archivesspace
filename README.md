@@ -188,6 +188,7 @@ ArchivesSpace requires.  Run this with:
 
     scripts/setup-database.sh  # or setup-database.bat under Windows
 
+
 ## Start ArchivesSpace
 
 Once your database is configured, start the application using
@@ -200,6 +201,19 @@ following URLs in your browser:
   - http://localhost:8080/ -- the staff interface
   - http://localhost:8081/ -- the public interface
   - http://localhost:8090/ -- the Solr admin console
+
+
+# Running ArchivesSpace against PostgreSQL
+
+Running against PostgreSQL requires the [PostgreSQL JDBC Driver](http://jdbc.postgresql.org/).
+Different JVM versions should use different drivers. Download the driver
+and place it in the lib direcoty, so it appears in the classpath.
+
+Most steps are similar to the steps for MySQL, with SQL altered to be
+suitable for PostgreSQL, and the `config/config.rb` file altered as below;
+setting the PostgreSQL database, and allowing unsupported databases.
+    `AppConfig[:db_url] = "jdbc:postgresql://localhost:5432/archivesspace?user=as&password=as123"`
+    `AppConfig[:allow_unsupported_database] = true`
 
 
 # Backup and recovery
